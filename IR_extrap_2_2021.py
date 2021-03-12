@@ -151,6 +151,7 @@ curvefit1 = fit(model_exp,x_values,y_values,parameters(x=x_values,y=y_values))[0
 #Define the function of approximated curve
 def exponential(x):
         y = (curvefit1[1]*np.exp(curvefit1[2]*x)) + curvefit1[0]
+        return y
 #non-discrete x values for the curve fit
 x = np.arange(2,20,0.1)
 y1 = np.zeros(len(x))
