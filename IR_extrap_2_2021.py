@@ -40,7 +40,7 @@ for i in range(len(b)):
 
 def model_exp(x_values,params,b=30):
     """ Model function for exponential decay fit with baseline.
-    For fitting data as y = c0 + c1*exp(-2*c2*L).
+    For fitting data as y = c0 + c1*exp(c2*L).
     Args:
         params (iterable): parameters [c0,c1,c2]
         x_values (NumPy vector): independent variable values [x0,...,x_(M-1)]
@@ -56,7 +56,7 @@ def model_exp(x_values,params,b=30):
     #
     # TypeError: 'numpy.float64' object cannot be interpreted as an integer
     x_vec = np.array(x_values,dtype=float)  # force to numpy float array to avoid type error surprises
-    L = ((2*(x_vec+(3/2)))**(1/2))*(30)
+    L = ((2*(x_vec+(3/2)))**(1/2))*(b)
     y_values = c0 + c1*np.exp(c2*L)
     return y_values
 
